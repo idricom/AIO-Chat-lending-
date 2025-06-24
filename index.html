@@ -3,131 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AIO Chat — Интеллектуальное AI-приложение</title>
+  <title>AIO Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background-color: #ffffff;
-      color: #111;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 1rem;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
     }
-
+    body {
+      background: linear-gradient(145deg, #f0f0f3, #dcdde1);
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
     header {
-      width: 100%;
-      max-width: 800px;
-      padding: 2rem 0;
+      padding: 2rem 1rem 1rem;
       text-align: center;
       font-size: 2rem;
-      font-weight: bold;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.6);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid #ccc;
     }
-
-    section {
-      width: 100%;
-      max-width: 800px;
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-left: 4px solid #00A67E;
-      padding-left: 0.75rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    .gallery {
+    nav {
       display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
       justify-content: center;
-      align-items: center;
+      gap: 1.2rem;
+      margin-top: 0.25rem;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      font-weight: 400;
+      opacity: 0.8;
     }
-
-    .gallery img {
-      width: 150px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    nav a {
+      text-decoration: none;
+      color: #333;
+      transition: opacity 0.3s ease;
+    }
+    nav a:hover {
+      opacity: 1;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(255,255,255,0.7);
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
       transition: transform 0.3s ease;
+    }
+    section:hover {
+      transform: scale(1.01);
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #444;
+    }
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .screenshots div {
+      width: 100%;
+      aspect-ratio: 9 / 19.5;
+      background-color: #e0e0e0;
+      border-radius: 12px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    }
+    .contact {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+    .contact a {
+      text-decoration: none;
+      color: #333;
       cursor: pointer;
     }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
     footer {
       text-align: center;
-      padding: 2rem 0;
-      font-size: 0.9rem;
-      color: #888;
-    }
-
-    @media (max-width: 500px) {
-      .gallery img {
-        width: 100px;
-      }
+      padding: 1rem;
+      font-size: 0.85rem;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
-  <header>AIO Chat</header>
+  <header>
+    AIO Chat
+    <nav>
+      <a href="#description">Описание</a>
+      <a href="#features">Возможности</a>
+      <a href="#subscription">Подписка</a>
+      <a href="#registration">Навигация</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
 
-  <section>
-    <h2>Описание</h2>
-    <p>AIO Chat — интеллектуальное AI-приложение для iOS, Android и десктопной веб-версии, которое помогает в учебе, работе и творчестве.</p>
+  <section id="description">
+    <h2>Описание приложения</h2>
+    <p><strong>AIO Chat</strong> — интеллектуальное AI-приложение для iOS, Android и десктопной веб-версии, которое помогает в учебе, работе и творчестве.</p>
   </section>
 
-  <section>
+  <section id="features">
     <h2>Что умеет AIO Chat</h2>
-    <ul>
-      <li><strong>Графика:</strong> генерация логотипов и изображений с помощью DALL·E 3</li>
-      <li><strong>Учёба:</strong> создание докладов, решение задач</li>
-      <li><strong>Аудио:</strong> озвучка текста (4 голоса), голосовой ввод</li>
-      <li><strong>Контент:</strong> генератор идей, редактор и переформулировка текстов</li>
-      <li><strong>Работа:</strong> создание резюме, бизнес-планов, автоисправление кода</li>
-      <li><strong>Чат:</strong> интерактивный чат на базе GPT ("Чат с НейроОлегом")</li>
-    </ul>
-  </section>
+    <div class="features">
+      <div class="feature-item">
+        <h3>Графика</h3>
+        <p>Генерация логотипов и изображений с помощью DALL·E 3</p>
+      </div>
+      <div class="feature-item">
+        <h3>Учёба</h3>
+        <p>Автоматическое создание докладов, решение задач</p>
+      </div>
+      <div class="feature-item">
+        <h3>Аудио</h3>
+        <p>Озвучка текста (4 голоса), голосовой ввод</p>
+      </div>
+      <div class="feature-item">
+        <h3>Контент</h3>
+        <p>Генератор идей, переформулировка и редактор текстов</p>
+      </div>
+      <div class="feature-item">
+        <h3>Работа</h3>
+        <p>Создание резюме, бизнес-планов, автоисправление кода</p>
+      </div>
+      <div class="feature-item">
+        <h3>Чат</h3>
+        <p>Интерактивный "Чат с НейроОлегом"</p>
+      </div>
+    </div>
 
-  <section>
-    <h2>Примеры интерфейса</h2>
-    <div class="gallery">
-      <img src="1.PNG" alt="Скриншот 1" />
-      <img src="3.PNG" alt="Скриншот 2" />
-      <img src="4.PNG" alt="Скриншот 3" />
+    <div class="screenshots">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </section>
 
-  <section>
+  <section id="subscription">
     <h2>Подписка</h2>
+    <p>3 дня бесплатного пробного периода</p>
+    <p>Подписки: 1 месяц / 3 месяца / 1 год</p>
+    <p>Преимущества подписки: отсутствие рекламы, быстрые ответы</p>
+  </section>
+
+  <section id="registration">
+    <h2>Регистрация и навигация</h2>
     <ul>
-      <li>3 дня бесплатного пробного периода</li>
-      <li>Подписки: 1 месяц / 3 месяца / 1 год</li>
-      <li>Преимущества: отсутствие рекламы, быстрые ответы</li>
+      <li>Вход и регистрация через Apple, Google, Яндекс и Email</li>
+      <li>Разделы приложения: FAQ, Оставить отзыв, Политика конфиденциальности, Тема интерфейса, Управление подпиской</li>
     </ul>
   </section>
 
-  <section>
-    <h2>Регистрация</h2>
-    <p>Вход и регистрация через Apple, Google, Яндекс и Email.</p>
-  </section>
-
-  <section>
+  <section class="contact" id="contacts">
     <h2>Контакты</h2>
     <p>Поддержка по почте: <a href="mailto:aioapp.helpdesk@gmail.com">aioapp.helpdesk@gmail.com</a></p>
   </section>
 
   <footer>
-    &copy; 2025 AIO Chat. Все права защищены.
+    © 2025 AIO Chat. Все права защищены.
   </footer>
 </body>
 </html>
